@@ -31,7 +31,7 @@
         </div>
         <b-row>
           <b-col cols md="4" lg="3" class="web-card">
-            <router-link class="card-link" :to="{ name: 'MainCardShow' }">
+            <router-link class="card-link" :to="{ name: 'MainCardShow' , params:{id:1} }">
               <b-card
                 title="الوزارات"
                 :img-src="require('../assets/1.png')"

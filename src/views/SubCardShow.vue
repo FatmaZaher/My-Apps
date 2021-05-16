@@ -4,7 +4,7 @@
       <h1 class="H1">وزارة الداخلية</h1>
       <b-row>
         <b-col cols md="4" class="web-card">
-          <router-link class="card-link" :to="{ name: 'ShowInfoApp' }">
+          <router-link class="card-link" :to="{ name: 'ShowInfoApp' , params:{id:1} }">
             <b-card
               title="ابشر"
               :img-src="require('../assets/1-2.png')"

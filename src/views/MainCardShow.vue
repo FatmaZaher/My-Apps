@@ -2,9 +2,10 @@
   <div class="MainCard pad-100">
     <b-container>
       <h1 class="H1">قسم الوزارات</h1>
+      {{ $route.params.id }}
       <b-row>
         <b-col cols md="4" class="web-card">
-          <router-link class="card-link" :to="{ name: 'SubCardShow' }">
+          <router-link class="card-link" :to="{ name: 'SubCardShow' , params:{id:1}}">
             <b-card
               title="وزارة الداخلية"
               sub-title="تطبيقات وزارة الداخلية"

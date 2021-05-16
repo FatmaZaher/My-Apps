@@ -20,17 +20,17 @@ const routes = [
     component: Aboutapps
   },
   {
-    path: "/MainCardShow",
+    path: "/MainCardShow/:id",
     name: "MainCardShow",
     component: MainCardShow
   },
   {
-    path: "/SubCardShow",
+    path: "/SubCardShow/:id",
     name: "SubCardShow",
     component: SubCardShow
   },
   {
-    path: "/ShowInfoApp",
+    path: "/ShowInfoApp/:id",
     name: "ShowInfoApp",
     component: ShowInfoApp
   }
