@@ -2,7 +2,7 @@
   <div class="footer">
     <b-container>
       <b-row>
-        <b-col col="6" md="4" offset-md="1">
+        <b-col cols="6" md="4" offset-md="1">
           <img src="../assets/logo.png" alt="logo" />
           <p class="my-4">
             تطبيقاتي هو دليلك لأهم التـطبيقات الـموثوقـة التي تحتاجها بشكل دائم
@@ -10,14 +10,14 @@
           <h5>حمّل التطبيق</h5>
 
           <b-row>
-            <b-col col="6">
+            <b-col cols="6">
               <div class="download text-center mt-3">
                 <img src="../assets/AppGallery.png" alt="App Gallery" />
                 <p class="my-1">حمل التطبيق من</p>
                 <a href="#">App Gallery</a>
               </div>
             </b-col>
-            <b-col col="6">
+            <b-col cols="6">
               <div class="download text-center mt-3">
                 <img src="../assets/google-play.png" alt="App Gallery" />
                 <p class="my-1">حمل التطبيق من</p>
@@ -26,12 +26,12 @@
             </b-col>
           </b-row>
         </b-col>
-        <b-col col="6" md="2">
+        <b-col cols="6" md="2">
           <h5>تواصل معنا</h5>
           <p class="mt-4">info@myapps.cc</p>
           <a href="#"> Ksa_Myaaps </a>
         </b-col>
-        <b-col col="6" md="4">
+        <b-col cols="6" md="4">
           <h5>أقسام المواقع</h5>
           <ul class="mt-4">
             <li><a href="#">الوزارات</a></li>
