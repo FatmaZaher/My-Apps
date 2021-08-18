@@ -13,6 +13,7 @@ const routes = [
     path: "/",
     name: "Main",
     component: Main,
+    props: true
   },
   {
     path: "/Aboutapps",
@@ -22,7 +23,8 @@ const routes = [
   {
     path: "/MainCardShow/:id",
     name: "MainCardShow",
-    component: MainCardShow
+    component: MainCardShow,
+    props: true
   },
   {
     path: "/SubCardShow/:id",

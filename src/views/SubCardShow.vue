@@ -1,13 +1,22 @@
 <template>
   <div class="SubCard pad-100">
     <b-container>
-      <h1 class="H1">وزارة الداخلية</h1>
+      <h1 class="H1">{{ page.ServiceName }}</h1>
       <b-row>
-        <b-col cols md="4" class="web-card">
-          <router-link class="card-link" :to="{ name: 'ShowInfoApp' , params:{id:1} }">
+        <b-col
+          v-for="(service, index) in services"
+          :key="index"
+          cols
+          md="4"
+          class="web-card"
+        >
+          <router-link
+            class="card-link"
+            :to="{ name: 'ShowInfoApp', params: { id: service.ServiceId } }"
+          >
             <b-card
-              title="ابشر"
-              :img-src="require('../assets/1-2.png')"
+              :title="service.ServiceName"
+              :img-src="service.ServiceURL"
               img-alt="Image"
               img-top
               tag="article"
@@ -21,7 +30,35 @@
   </div>
 </template>
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      services: [],
+      page: null,
+      parent: null,
+    };
+  },
+  created() {
+    const servicesId = this.$route.params.id;
+ 
+    axios
+      .get(
+        "https://myapps.cc/wcf/service.svc/getServiceChildById/" + servicesId
+      )
+      .then((res) => {
+        this.services = res.data;
+        this.parent = res.data[0].ServiceTypeId;
+        axios
+          .get(
+            "https://myapps.cc/wcf/service.svc/getServicesListByServiceTypeId/" +
+              this.parent
+          )
+          .then((res) => {
+             this.page = res.data.find((item) => item.ServiceId == servicesId);
+          });
+      });
+  },
+};
 </script>
-<style scoped>
-</style>
+<style scoped></style>

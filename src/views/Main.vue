@@ -30,11 +30,11 @@
           <h3 class="mb-4">أقسام المواقع</h3>
         </div>
         <b-row>
-          <b-col cols md="4" lg="3" class="web-card">
-            <router-link class="card-link" :to="{ name: 'MainCardShow' , params:{id:1} }">
+          <b-col  v-for="service in services" :key="service.ServiceTypeId" cols md="4" lg="3" class="web-card">
+            <router-link class="card-link" :to="{ name: 'MainCardShow' , params:{id: service.ServiceTypeId} }">
               <b-card
-                title="الوزارات"
-                :img-src="require('../assets/1.png')"
+                :title="service.ServiceTypeName"
+                :img-src="service.ImageURL"
                 img-alt="Image"
                 img-top
                 tag="article"
@@ -49,8 +49,18 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
-  components: {},
+  data (){
+    return{
+      services: []
+    }
+  },
+  created (){
+    axios.get("https://myapps.cc/wcf/service.svc/getServicesTypeList").then(res => {
+      this.services = res.data
+    })
+  }
 };
 </script>
 <style scoped>
